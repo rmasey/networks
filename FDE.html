@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title> Fetch Decode Execute Cycle </title>
+  <script language="JavaScript">
+    function showInput() {
+	
+	document.getElementById('displayOutput').innerHTML = "Have another guess!"
+
+	var numberCorrect = 0;
+
+	if (document.getElementById('first').value == "D") {
+		numberCorrect = numberCorrect + 1;
+	}
+	if (document.getElementById('second').value == "E") {
+		numberCorrect = numberCorrect + 1;
+	}
+	if (document.getElementById('third').value == "B") {
+		numberCorrect = numberCorrect + 1;
+	}
+	if (document.getElementById('fourth').value == "A") {
+		numberCorrect = numberCorrect + 1;
+	}
+	if (document.getElementById('fifth').value == "C") {
+		numberCorrect = numberCorrect + 1;
+	}
+	if (numberCorrect == 5) {
+		document.getElementById('displayOutput').innerHTML = "Congratulations!  You are correct.  Now revise something else!"
+	} else {
+		document.getElementById('displayOutput').innerHTML = "Number correct is " + numberCorrect
+	}
+
+   }
+  </script>
+  </head>
+  <body>
+  <b><h1> Fetch Decode Execute Cycle </b></h1><p> 
+
+The stages of the fetch-decode-execute cycle have got mixed up.  Put them in the correct order!
+<p>
+A  Instruction in CIR decoded by Control Unit – split into opcode and operand. If operand is an address this is copied to MAR.
+<p>
+B  Contents of MDR copied to CIR.
+<p>
+C  The instruction is carried out on the operand.
+<p>
+D  Address of next instruction copied from PC to MAR. Control Unit loads address onto address bus, sends read signal on control bus to read the instruction at the address.  
+<p>
+E  Contents of address passed on data bus to MDR. PC incremented to hold address of next instruction.
+<p>
+
+  <form>
+
+    <label><b>First </b></label>
+    <select id="first" name="first">
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+    <option value="E">E</option>
+    </select>     
+    <p>
+
+ <label><b>Second </b></label>
+    <select id="second" name="first">
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+    <option value="E">E</option>
+    </select>     
+    <p>
+
+ <label><b>Third </b></label>
+    <select id="third" name="first">
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+    <option value="E">E</option>
+    </select>     
+    <p>
+
+
+ <label><b>Fourth </b></label>
+    <select id="fourth" name="first">
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+    <option value="E">E</option>
+    </select>     
+    <p>
+
+
+
+ <label><b>Fifth </b></label>
+    <select id="fifth" name="first">
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="D">D</option>
+    <option value="E">E</option>
+    </select>     
+    <p>
+
+
+
+  </form>
+
+  <input type="submit" onclick="showInput();"><br/><p>
+ 
+  Output
+  <p><div id='displayOutput'></div></p>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title> Logic Gate Computer </title>
+  <script language="JavaScript">
+    function showInput() {
+	
+	var output = 0;
+
+	document.getElementById('displayOutput').innerHTML = 0;		
+	document.getElementById("Gate image").src = "none.png";	//make sure no gate showing
+		
+
+	if (document.getElementById('r1').checked) {
+		if (document.getElementById('input11').checked && document.getElementById('input21').checked) {
+			document.getElementById('displayOutput').innerHTML = 1;
+		}
+	} else if (document.getElementById('r2').checked) {
+		if (document.getElementById('input11').checked || document.getElementById('input21').checked) {
+			document.getElementById('displayOutput').innerHTML = 1;
+		}
+	} else if (document.getElementById('r3').checked) {
+		if ((document.getElementById('input11').checked && document.getElementById('input20').checked) ||
+		  (document.getElementById('input10').checked && document.getElementById('input21').checked))   {
+			document.getElementById('displayOutput').innerHTML = 1;
+		}
+	} else if (document.getElementById('r4').checked) {
+		if ((document.getElementById('input10').checked && document.getElementById('input20').checked) ||
+		  (document.getElementById('input10').checked && document.getElementById('input21').checked) ||
+		  (document.getElementById('input11').checked && document.getElementById('input20').checked))   {
+			document.getElementById('displayOutput').innerHTML = 1;
+			document.getElementById("Gate image").src = "nandgate.png";
+		}
+	} else {
+		if (document.getElementById('input10').checked && document.getElementById('input20').checked) {
+			document.getElementById('displayOutput').innerHTML = 1;
+		}
+	}
+    }
+  </script>
+  </head>
+  <body>
+  <b><h1> Logic Gate Computer </b></h1><p> 
+
+
+
+  <form>
+
+    <label><b>Select a gate</b></label>
+    <input type="radio" id="r1" name="gate" value="AND" checked="checked"> AND     
+    <input type="radio" id="r2" name="gate" value="OR">   OR     
+    <input type="radio" id="r3" name="gate" value="XOR">  XOR    
+    <input type="radio" id="r4" name="gate" value="NAND">    NAND     
+    <input type="radio" id="r5" name="gate" value="NOR">   NOR     
+    <p>
+
+    <label><b>Select a value for first input</b></label>
+    <input type="radio" id="input10" name="input1" value="0" checked="checked"> 0 
+    <input type="radio" id="input11" name="input1" value="1"> 1  <p>
+
+    <label><b>Select a value for second input</b></label>
+    <input type="radio" id="input20" name="input2" value="0" checked="checked"> 0 
+    <input type="radio" id="input21" name="input2" value="1"> 1  <p>
+    
+
+  </form>
+
+  <input type="submit" onclick="showInput();"><br/><p>
+ 
+  Output
+  <p><div id='displayOutput'></div></p>
+
+<img id="Gate image" src ="none.png">
+
+
+  </body>
+</html>
